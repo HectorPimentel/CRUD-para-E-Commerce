@@ -1,0 +1,34 @@
+{% extends 'shoestore/main.html' %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h4 class="create-account-text">Create an Account</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <div class="form-group">
+                            <label>{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger">
+                                    {{ field.errors|striptags }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
+                    <button type="submit" class="btn btn-dark btn-block">Register</button>
+                </form>
+                <hr>
+                <p class="text-center">Already have an account? <a href="{% url 'login' %}">Click here to Login</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
