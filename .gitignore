@@ -1,0 +1,34 @@
+# Entorno virtual
+venv/
+env/
+
+# Archivos de configuración del entorno
+*.env
+*.local
+
+# Archivos de base de datos (si usas SQLite localmente)
+db.sqlite3
+
+# Archivos generados por Django
+__pycache__/
+*.py[cod]
+
+# Archivos de migraciones
+**/migrations/*.py
+**/migrations/*.pyc
+
+# Archivos estáticos recopilados
+staticfiles/
+
+# Archivos de medios subidos por usuarios
+media/
+
+# Archivos de logs
+*.log
+
+# Configuración de IDEs
+.vscode/
+.idea/
+
+# Node (si usas algo de JS)
+node_modules/
